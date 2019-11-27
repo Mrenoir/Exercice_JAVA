@@ -1,7 +1,5 @@
-import org.jetbrains.annotations.Contract;
-
+package com.company;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
@@ -19,7 +17,8 @@ public class FicReader {
             String[] lineTab = line.split(":");
             Integer score = Integer.parseInt(lineTab[1]);
             ficContent.put(lineTab[0],score) ;
-            System.out.print(ficContent.get(lineTab[0]));
+            System.out.print("Score : " +  ficContent.get(lineTab[0]) + "\n");
+
         }
         return  ficContent;
     }
