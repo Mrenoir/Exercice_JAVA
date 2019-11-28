@@ -6,7 +6,12 @@
  * project : exercice3
  */
 
-
+/*
+ * Date 28/11/2019 14:40
+ * Createur : Marvin RENOIR
+ * File : Main.java
+ * project : exercice3
+ */
 package com.company;
 
 public class Main {
@@ -28,7 +33,8 @@ public class Main {
 //                e.getMessage();
                 value = 0;
                 count--;
-                throw new ExceptionIsNumber("Cette valeur n'est pas un nombre ! ");
+                System.out.print("La valeur est une lettre ...");
+                //throw new ExceptionIsNumber("Cette valeur n'est pas un nombre ! ");
             }
             result += value;
             count++;
