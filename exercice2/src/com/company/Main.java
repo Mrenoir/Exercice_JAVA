@@ -19,6 +19,6 @@ public class Main {
         fc.getScore(map, mail);
         System.out.print("Moyenne des scores : " + fc.getAverage(map));
         Duration duration = Duration.between(start, Instant.now());
-        System.out.print(" \n ùTemps d'execution : " + duration.getSeconds() + " secondes ");
+        System.out.print(" \n Temps d'execution : " + duration.getSeconds() + " seconds ");
     }
 }
