@@ -15,7 +15,13 @@ public class FicReader {
 
     public HashMap ReadFic() throws IOException {
         HashMap<String,Integer>  ficContent = new HashMap<>() ;
-        BufferedReader reader = new BufferedReader(new FileReader("test.txt"));
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader("test.txt"));
+
+        } catch (Error e) {
+            System.out.print("Merci de créer le fichier");
+        }
         String line = null;
         while((line = reader.readLine()) != null){
             String[] lineTab = line.split(":");
@@ -41,6 +47,11 @@ public class FicReader {
     }
 
     public Integer getScore(HashMap student, String mail) {
-        return (Integer) student.get(mail);
+        if (student.get(mail) != null) {
+            System.out.print("Le score de l'étudiant avec le mail : " + mail + " est de : " + student.get(mail) + " \n");
+            return (Integer) student.get(mail);
+        }
+        System.out.print("Il n'y a aucun étudiant avec l'adresse mail :  " + mail + "\n");
+        return 0;
     }
 }
