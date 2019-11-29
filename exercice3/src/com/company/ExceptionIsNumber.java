@@ -12,4 +12,5 @@ public class ExceptionIsNumber extends Exception {
     public ExceptionIsNumber(String s) {
         System.out.println(s);
     }
+
 }

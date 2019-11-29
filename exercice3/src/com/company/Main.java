@@ -5,24 +5,17 @@
  * File : Main.java
  * project : exercice3
  */
-
-/*
- * Date 28/11/2019 14:40
- * Createur : Marvin RENOIR
- * File : Main.java
- * project : exercice3
- */
 package com.company;
 
 public class Main {
 
-    public static void main(String[] args) throws ExceptionIsNumber, ZeroDivExeception {
-        String[] array = {"123", "456", "a"};
+    public static void main(String[] args) throws ZeroDivExeception {
+        String[] array = {"203", "404", "a", "15", "18", "20"};
         double average = AverageArray(array);
         System.out.println("Moyenne :  " + average);
     }
 
-    private static double AverageArray(String[] array) throws ExceptionIsNumber, ZeroDivExeception {
+    private static double AverageArray(String[] array) throws ZeroDivExeception {
         double result = 0;
         double value = 0;
         int count = 0;
@@ -30,14 +23,17 @@ public class Main {
             try {
                 value = Double.parseDouble(s);
             } catch (NumberFormatException e) {
-//                e.getMessage();
+                System.out.print(e.getMessage() + "\n");
                 value = 0;
                 count--;
-                System.out.print("La valeur est une lettre ...");
-                //throw new ExceptionIsNumber("Cette valeur n'est pas un nombre ! ");
+                System.out.print("La valeur est une lettre ... \n");
+                // throw new ExceptionIsNumber("Cette valeur n'est pas un nombre ! ");
+
+            } finally {
+                result += value;
+                count++;
+
             }
-            result += value;
-            count++;
         }
         try {
             result /= count;
