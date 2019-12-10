@@ -1,0 +1,13 @@
+1 - False 20
+2 - 25
+3 - Error non initialisé 
+4- Null pointer exeception
+5- 12
+6 -  IABDE
+7- un premier texte
+un deuxieme texte
+un deuxieme texte texte a concatener en string
+construction sbuffer texte a concatener en sbuffer
+construction sbuffer 2
+simple construction
+8- il faut rajouter un if(array != null) 
