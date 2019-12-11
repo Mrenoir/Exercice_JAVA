@@ -42,7 +42,13 @@ public class FicReader {
             result += value;
             count++;
         }
-        result /= count;
+        try {
+            result /= count;
+        }
+        catch(Exeception e) {
+
+            return  result;
+        }
         return result;
     }
 
