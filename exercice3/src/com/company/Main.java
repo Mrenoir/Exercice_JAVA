@@ -26,8 +26,8 @@ public class Main {
                 System.out.print(e.getMessage() + "\n");
                 value = 0;
                 count--;
-                System.out.print("La valeur est une lettre ... \n");
-                // throw new ExceptionIsNumber("Cette valeur n'est pas un nombre ! ");
+                System.out.println("La valeur est une lettre ... \n");
+                throw new ZeroDivExeception("Methode AverageArray ");
 
             } finally {
                 result += value;
