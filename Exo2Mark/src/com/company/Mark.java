@@ -23,4 +23,27 @@ public class Mark {
     public void setSubject (String subject) {
         this.subject = subject;
     }
+
+    @Override
+    public String toString() {
+        return "Mark{" +
+                "value=" + value +
+                ", subject='" + subject + '\'' +
+                '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode( );
+    }
+
+    @Override
+    public boolean equals( Object obj ) {
+        return super.equals( obj );
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone( );
+    }
 }
