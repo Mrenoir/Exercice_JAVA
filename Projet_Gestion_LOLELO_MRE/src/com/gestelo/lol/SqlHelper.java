@@ -1,15 +1,13 @@
 package com.gestelo.lol;
+
 import org.jetbrains.annotations.NotNull;
 
-import java.io.*;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.Map;
+
 
 public class SqlHelper {
-
-    private static PrintStream PrinterHelper;
 
     public static void print( @NotNull ResultSet rs ) throws SQLException {
         String[] row = new String[0];

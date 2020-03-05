@@ -1,31 +1,33 @@
 package com.gestelo.lol;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
 
 public class SQLDatabaseConnection {
+    public static void main( String[] args ) throws SQLException {
 
-    // Connect to your database.
-    // Replace server name, username, and password with your credentials
-    public static void main(String[] args) {
-        String connectionUrl =
-                "jdbc:mysql://localhost:3306/test";
-        String user = "root";
-        String passwd ="";
-        Connection cn = null;
+        HashMap<String, String> param = fileParam( "jdbc:mysql://localhost:3306/test" , "root" , "" );
+        ConnectHelper co = new ConnectHelper( param.get( "url" ) , param.get( "user" ) , param.get( "passwd" ) );
+        co.connect( );
         Statement st = null;
         try {
-            cn = DriverManager.getConnection( connectionUrl,user,passwd );
-            st = cn.createStatement();
-            try ( ResultSet sql = st.executeQuery( "SELECT * from pomme" ) ) {
-                SqlHelper.print( sql );
+            if (HelperQuery.exectqueryI( "INSERT INTO POMME values (NULL,5,'Rose','Test')" , co )) {
+                //SqlHelper.print( sql );
+                System.out.println( "test" );
             }
 
-        } catch ( SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace( );
         }
 
+    }
+
+    public static HashMap<String, String> fileParam( String url , String user , String passwd ) {
+        HashMap<String, String> param = new HashMap<>( );
+        param.put( "url" , url );
+        param.put( "user" , user );
+        param.put( "passwd" , passwd );
+        return param;
     }
 }
