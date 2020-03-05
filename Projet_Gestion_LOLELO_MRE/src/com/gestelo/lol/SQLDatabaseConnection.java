@@ -1,7 +1,6 @@
 package com.gestelo.lol;
 
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.HashMap;
 
 public class SQLDatabaseConnection {
@@ -9,9 +8,8 @@ public class SQLDatabaseConnection {
 
         HashMap<String, String> param = fileParam( "jdbc:mysql://localhost:3306/test" , "root" , "" );
         ConnectHelper co = new ConnectHelper( param.get( "url" ) , param.get( "user" ) , param.get( "passwd" ) );
-        co.connect( );
-        Statement st = null;
         try {
+            co.connect( );
             if (HelperQuery.exectqueryI( "INSERT INTO POMME values (NULL,5,'Rose','Test')" , co )) {
                 //SqlHelper.print( sql );
                 System.out.println( "test" );
